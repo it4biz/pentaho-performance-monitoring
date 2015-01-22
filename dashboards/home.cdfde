@@ -723,7 +723,7 @@
      },
      {
       "name": "html",
-      "value": "<form id=\"form\" action=\"#\">\n    <input type=\"hidden\" name=\"catalogName\" value=\"Pentaho Performance Monitoring\">\n    <input type=\"hidden\" name=\"overwrite\" value=\"true\">\n    <input type=\"hidden\" name=\"xmlaEnabledFlag\" value=\"true\">\n    <input type=\"hidden\"\" name=\"parameters\" value=\"DataSource=Hibernate\">\n    <textarea style=\"display:none\" name=\"uploadAnalysis\">\n<Schema name=\"Pentaho Performance Monitoring\"> <Cube name=\"MDX and SQL Queries\" visible=\"true\" cache=\"true\" enabled=\"true\"> <Table name=\"PERFORMANCE_AUDIT_CE\" schema=\"PUBLIC\"> </Table> <Dimension type=\"StandardDimension\" visible=\"true\" highCardinality=\"false\" name=\"Query\"> <Hierarchy name=\"Query\" visible=\"true\" hasAll=\"true\" allMemberName=\"All\"> <Level name=\"Type\" visible=\"true\" column=\"TYPE\" type=\"String\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Query\" visible=\"true\" column=\"QUERY\" type=\"String\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"ID\" visible=\"true\" column=\"QUERY_ID\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> </Hierarchy> </Dimension> <Dimension type=\"StandardDimension\" visible=\"true\" name=\"Period\"> <Hierarchy name=\"Period\" visible=\"true\" hasAll=\"true\" allMemberName=\"All\"> <Level name=\"Year\" visible=\"true\" column=\"YEAR\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Month\" visible=\"true\" column=\"MONTH_DESC\" ordinalColumn=\"MONTH\" type=\"String\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Day\" visible=\"true\" column=\"DAY\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> </Hierarchy> </Dimension> <Dimension type=\"StandardDimension\" visible=\"true\" name=\"Time\"> <Hierarchy name=\"Time\" visible=\"true\" hasAll=\"true\" allMemberName=\"All\"> <Level name=\"Hour\" visible=\"true\" column=\"HOUR\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Minute\" visible=\"true\" column=\"MINUTE\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Second\" visible=\"true\" column=\"SECOND\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> </Hierarchy> </Dimension> <Measure name=\"Quantity\" column=\"QUERY\" datatype=\"String\" aggregator=\"distinct-count\" visible=\"true\"> </Measure> <Measure name=\"Quantity of Executions\" column=\"QUERY_ID\" datatype=\"Integer\" aggregator=\"count\" visible=\"true\"> </Measure> <Measure name=\"Average Execution Time\" column=\"QUERY_EXEC_TIME\" datatype=\"Integer\" aggregator=\"avg\" visible=\"true\"> </Measure> <Measure name=\"Average Execution Time + Fetch\" column=\"QUERY_EXEC_FETCH\" datatype=\"Integer\" aggregator=\"avg\" visible=\"true\"> </Measure> <Measure name=\"Average Returned Rows\" column=\"QUERY_ROWS\" datatype=\"Integer\" aggregator=\"avg\" visible=\"true\"> </Measure> </Cube></Schema>\n    </textarea>\n    <div class=\"btn-install-div\">\n        <button id=\"btn-install\" class=\"btn btn-lg btn-primary\" type=\"submit\">Install plugin</button>           \n    </div>    \n</form> ",
+      "value": "<form id=\"form\" action=\"#\">\n    <input type=\"hidden\" name=\"catalogName\" value=\"Pentaho Performance Monitoring\">\n    <input type=\"hidden\" name=\"overwrite\" value=\"true\">\n    <input type=\"hidden\" name=\"xmlaEnabledFlag\" value=\"true\">\n    <input type=\"hidden\"\" name=\"parameters\" value=\"DataSource=Hibernate\">\n    <textarea style=\"display:none\" name=\"uploadAnalysis\">\n<Schema name=\"Pentaho Performance Monitoring\"> <Cube name=\"MDX and SQL Queries\" visible=\"true\" cache=\"true\" enabled=\"true\"> <Table name=\"PERFORMANCE_AUDIT_CE\" schema=\"PUBLIC\"> </Table> <Dimension type=\"StandardDimension\" visible=\"true\" highCardinality=\"false\" name=\"Query\"> <Hierarchy name=\"Query\" visible=\"true\" hasAll=\"true\" allMemberName=\"All\"> <Level name=\"Type\" visible=\"true\" column=\"TYPE\" type=\"String\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Query\" visible=\"true\" column=\"QUERY\" type=\"String\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"ID\" visible=\"true\" column=\"QUERY_ID\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> </Hierarchy> </Dimension> <Dimension type=\"StandardDimension\" visible=\"true\" name=\"Period\"> <Hierarchy name=\"Period\" visible=\"true\" hasAll=\"true\" allMemberName=\"All\"> <Level name=\"Year\" visible=\"true\" column=\"YEAR\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Month\" visible=\"true\" column=\"MONTH_DESC\" ordinalColumn=\"MONTH\" type=\"String\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Day\" visible=\"true\" column=\"DAY\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> </Hierarchy> </Dimension> <Dimension type=\"StandardDimension\" visible=\"true\" name=\"Time\"> <Hierarchy name=\"Time\" visible=\"true\" hasAll=\"true\" allMemberName=\"All\"> <Level name=\"Hour\" visible=\"true\" column=\"HOUR\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Minute\" visible=\"true\" column=\"MINUTE\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> <Level name=\"Second\" visible=\"true\" column=\"SECOND\" type=\"Integer\" uniqueMembers=\"false\" levelType=\"Regular\" hideMemberIf=\"Never\"> </Level> </Hierarchy> </Dimension> <Measure name=\"Quantity\" column=\"QUERY\" datatype=\"String\" aggregator=\"distinct-count\" visible=\"true\"> </Measure> <Measure name=\"Quantity of Executions\" column=\"QUERY_ID\" datatype=\"Integer\" aggregator=\"count\" visible=\"true\"> </Measure> <Measure name=\"Average Execution Time\" column=\"QUERY_EXEC_TIME\" datatype=\"Integer\" aggregator=\"avg\" visible=\"true\"> </Measure> <Measure name=\"Average Execution Time + Fetch\" column=\"QUERY_EXEC_FETCH\" datatype=\"Integer\" aggregator=\"avg\" visible=\"true\"> </Measure> <Measure name=\"Average Returned Rows\" column=\"QUERY_ROWS\" datatype=\"Integer\" aggregator=\"avg\" visible=\"true\"> </Measure> </Cube></Schema>\n    </textarea>\n    <button id=\"btn-publish-schema\" type=\"submit\" style=\"display:none;\">\n</form> ",
       "type": "Html"
      },
      {
@@ -793,16 +793,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[]",
-      "type": "colTypesCustom"
-     },
-     {
-      "name": "colFormats",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "colWidths",
       "value": "[]",
       "type": "Array"
@@ -820,6 +810,16 @@
      {
       "name": "colHeaders",
       "value": "[\"Queries MDX\"]",
+      "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[]",
+      "type": "colTypesCustom"
+     },
+     {
+      "name": "colFormats",
+      "value": "[]",
       "type": "Array"
      },
      {
@@ -996,16 +996,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[]",
-      "type": "colTypesCustom"
-     },
-     {
-      "name": "colFormats",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "colWidths",
       "value": "[]",
       "type": "Array"
@@ -1023,6 +1013,16 @@
      {
       "name": "colHeaders",
       "value": "[\"Queries SQL\"]",
+      "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[]",
+      "type": "colTypesCustom"
+     },
+     {
+      "name": "colFormats",
+      "value": "[]",
       "type": "Array"
      },
      {
@@ -1199,16 +1199,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[]",
-      "type": "colTypesCustom"
-     },
-     {
-      "name": "colFormats",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "colWidths",
       "value": "[\"90%\",\"10%\"]",
       "type": "Array"
@@ -1225,6 +1215,16 @@
      },
      {
       "name": "colHeaders",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[]",
+      "type": "colTypesCustom"
+     },
+     {
+      "name": "colFormats",
       "value": "[]",
       "type": "Array"
      },
@@ -2095,23 +2095,23 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
       "type": "Integer"
      },
      {
       "name": "height",
       "value": "100",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -3304,23 +3304,23 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
-      "value": "",
-      "type": "Integer"
-     },
-     {
       "name": "priority",
       "value": 5,
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
       "type": "Integer"
      },
      {
       "name": "height",
       "value": "100",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -4526,7 +4526,7 @@
      },
      {
       "name": "javaScript",
-      "value": "function installPlugin(){\n    $.ajax({\n        url: \"/pentaho/plugin/pentaho-performance-monitoring/api/jobinstall\",\n        cache: false\n    }).done(function( data ) {\n        console.log(data);\n        if(data.result){\n            var msgHtml='<div class=\"alert alert-success\" role=\"alert\">'+\n            '<b>Installation has been successful!</b> please restart your biserver.'+\n            '</div>'+\n            '<hr>'+\n            '<label>Was made some changes in your log4j.xml configuration, click here for more information!</label>';\n            e.preventDefault();\n            $.ajax( {\n                url: '/pentaho/plugin/data-access/api/mondrian/postAnalysis',\n                type: 'POST',\n                async: false,\n                data: new FormData(  this ),\n                processData: false,\n                contentType: false\n                ,success: function( publish ) {\n                    if(publish==3){\n                        $(\"#modal-body\").html(msgHtml);     \n                    }else if(publish==2){\n                        html_msg='<div class=\"alert alert-danger\" role=\"alert\">Error publish the schema</div>';\n                        $(\"#modal-body\").html(html_msg);\n                    }else{\n                        html_msg='<div class=\"alert alert-danger\" role=\"alert\">Error undefined</div>';\n                        $(\"#modal-body\").html(html_msg);                   \n                    }\n                }\n            });        \n        }else{\n            var msgHtml='<div class=\"alert alert-danger\" role=\"alert\">'+\n            '<b>Installation has a problem!</b> please contanct us.'+\n            '</div>'+\n            '<hr>'+\n            '<label>info@it4biz.com.br</label>';\n            $(\"#modal-body\").html(msgHtml);  \n        }\n    }); \n} ",
+      "value": "function installPlugin(){\n    $.ajax({\n        url: \"/pentaho/plugin/pentaho-performance-monitoring/api/jobinstall\",\n        cache: false\n    }).done(function( data ) {\n        if(data.result){\n            $( \"#btn-publish-schema\" ).trigger( \"click\" );            \n        }else{\n            var msgHtml='<div class=\"alert alert-danger\" role=\"alert\">'+\n            '<b>Installation has a problem!</b> please contanct us.'+\n            '</div>'+\n            '<hr>'+\n            '<label>info@it4biz.com.br</label>';\n            $(\"#modal-body\").html(msgHtml);  \n        }\n    }); \n} \n\n\n$( '#form' ).click( function( e ) {   \n    e.preventDefault();                   \n    $.ajax( {\n        url: '/pentaho/plugin/data-access/api/mondrian/postAnalysis',\n        type: 'POST',\n        async: false,\n        data: new FormData( this ),\n        processData: false,\n        contentType: false\n        ,success: function( publish ) {\n            if(publish==3){\n                var html_msg='<div class=\"alert alert-success\" role=\"alert\">'+\n                '<b>Installation has been successful!</b> please restart your biserver.'+\n                '</div>'+\n                '<hr>'+\n                '<label>Was made some changes in your log4j.xml configuration, click here for more information!</label>';\n                $(\"#modal-body\").html(html_msg);     \n            }else if(publish==2){\n                html_msg='<div class=\"alert alert-danger\" role=\"alert\">Error publish the schema</div>';\n                $(\"#modal-body\").html(html_msg);\n            }else{\n                html_msg='<div class=\"alert alert-danger\" role=\"alert\">Error undefined</div>';\n                $(\"#modal-body\").html(html_msg);                   \n            }\n        }\n    });                     \n}); ",
       "type": "JavaScript"
      }
     ]
