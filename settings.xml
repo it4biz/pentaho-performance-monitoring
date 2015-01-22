@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<cde-styles>
+		<path>system/pentaho-performance-monitoring/resources/styles</path>
+	</cde-styles>
+  	<cde-datasources/>
+	<cde-components>
+	  <!-- paths from solution with cde component definitions to be loaded-->
+	  <path>system/pentaho-performance-monitoring/resources/components</path>
+	  <path>pentaho-performance-monitoring/components</path>
+	</cde-components>
+</settings>

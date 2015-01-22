@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin title="pentaho-performance-monitoring" loader="DEFAULT">
+<overlays>
+		<overlay id="startup.performanceAuditCE" resourcebundle="content/pentaho-performance-monitoring/resources/lang/messages">
+			<menubar id="toolsmenu">
+	        	<menuitem id="pentaho-performance-monitoring" label="Performance Monitoring" command="mantleXulHandler.openUrl('Performance Monitoring','Performance Monitoring','plugin/pentaho-performance-monitoring/api/default')"/>
+	      	</menubar>
+	    </overlay>
+	</overlays>
+	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+	<static-paths>
+		<static-path url="/pentaho-performance-monitoring/static" localFolder="static"/>
+		<static-path url="/pentaho-performance-monitoring/resources" localFolder="resources"/>
+	</static-paths>
+	<content-types>
+		<content-type>
+			<title>pentaho-performance-monitoring</title>
+			<description></description>
+			<company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
+		</content-type>
+	</content-types>
+	<content-generator
+		id="pentaho-performance-monitoring"
+		title="pentaho-performance-monitoring"
+		type="pentaho-performance-monitoring"
+		class="pt.webdetails.cpk.CpkContentGenerator"/>
+	<!-- Menu entry -->
+	<menu-items>
+	</menu-items>
+</plugin>

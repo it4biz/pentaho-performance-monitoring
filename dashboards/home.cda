@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="dsLastQueriesMdx" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
+      <Connection id="dsExecutions" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
+      <Connection id="dsTopFastQueries" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
+      <Connection id="dsTopSlowQueries" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
+      <Connection id="dsQueryId" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
+      <Connection id="dsLastQueriesSql" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="false" cacheDuration="3600"
+               connection="dsLastQueriesMdx"
+               id="dsLastQueriesMdx"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="lastQueriesDate" type="String"/>
+      </Parameters>
+      <Query>SELECT query
+FROM performance_audit_ce
+WHERE TIME = ${lastQueriesDate} AND TYPE = 'MDX'
+ORDER BY TIME DESC</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600" connection="dsExecutions"
+               id="dsExecutions"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="type" type="String"/>
+         <Parameter default="" name="startOverview" type="String"/>
+         <Parameter default="" name="endOverview" type="String"/>
+      </Parameters>
+      <Query>SELECT QUERY as "Queries", count(QUERY) as "Quantity Executions"
+FROM performance_audit_ce
+WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
+GROUP BY QUERY
+ORDER BY QUERY DESC</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600"
+               connection="dsTopFastQueries"
+               id="dsTopFastQueries"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="lastQueriesDate" type="String"/>
+         <Parameter default="" name="type" type="String"/>
+         <Parameter default="" name="startOverview" type="String"/>
+         <Parameter default="" name="endOverview" type="String"/>
+      </Parameters>
+      <Query>SELECT QUERY_ID, QUERY_EXEC_TIME
+FROM performance_audit_ce
+WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
+ORDER BY QUERY_EXEC_TIME ASC
+LIMIT 10</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600"
+               connection="dsTopSlowQueries"
+               id="dsTopSlowQueries"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="lastQueriesDate" type="String"/>
+         <Parameter default="" name="type" type="String"/>
+         <Parameter default="" name="startOverview" type="String"/>
+         <Parameter default="" name="endOverview" type="String"/>
+      </Parameters>
+      <Query>SELECT QUERY_ID, QUERY_EXEC_TIME
+FROM performance_audit_ce
+WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
+ORDER BY QUERY_EXEC_TIME DESC
+LIMIT 10</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600" connection="dsQueryId"
+               id="dsQueryId"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="queryId" type="Integer"/>
+      </Parameters>
+      <Query>SELECT QUERY
+FROM performance_audit_ce
+WHERE QUERY_ID = ${queryId}</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600"
+               connection="dsLastQueriesSql"
+               id="dsLastQueriesSql"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="lastQueriesDate" type="String"/>
+      </Parameters>
+      <Query>SELECT query
+FROM performance_audit_ce
+WHERE TIME = ${lastQueriesDate} AND TYPE = 'SQL'
+ORDER BY TIME DESC</Query>
+   </DataAccess>
+</CDADescriptor>

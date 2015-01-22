@@ -1,0 +1,46 @@
+<Schema name="Performance Audit CE">
+  <Cube name="MDX and SQL Queries" visible="true" cache="true" enabled="true">
+    <Table name="PERFORMANCE_AUDIT_CE" schema="PUBLIC">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Query">
+      <Hierarchy name="Query" visible="true" hasAll="true" allMemberName="All">
+        <Level name="Type" visible="true" column="TYPE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Query" visible="true" column="QUERY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="ID" visible="true" column="QUERY_ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="Period">
+      <Hierarchy name="Period" visible="true" hasAll="true" allMemberName="All">
+        <Level name="Year" visible="true" column="YEAR" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Month" visible="true" column="MONTH_DESC" ordinalColumn="MONTH" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Day" visible="true" column="DAY" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="Time">
+      <Hierarchy name="Time" visible="true" hasAll="true" allMemberName="All">
+        <Level name="Hour" visible="true" column="HOUR" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Minute" visible="true" column="MINUTE" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Second" visible="true" column="SECOND" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Quantity" column="QUERY" datatype="String" aggregator="distinct-count" visible="true">
+    </Measure>
+    <Measure name="Quantity of Executions" column="QUERY_ID" datatype="Integer" aggregator="count" visible="true">
+    </Measure>
+    <Measure name="Average Execution Time" column="QUERY_EXEC_TIME" datatype="Integer" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="Average Execution Time + Fetch" column="QUERY_EXEC_FETCH" datatype="Integer" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="Average Returned Rows" column="QUERY_ROWS" datatype="Integer" aggregator="avg" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
