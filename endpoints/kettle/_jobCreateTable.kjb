@@ -167,7 +167,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>CREATE TABLE performance_monitoring&#xa;&#x28;&#xa;  time DATE&#xa;, query_id INTEGER&#xa;, query VARCHAR&#x28;2000&#x29;&#xa;, type VARCHAR&#x28;3&#x29;&#xa;, query_exec_time INTEGER&#xa;, query_exec_fetch INTEGER&#xa;, query_rows INTEGER&#xa;, year INTEGER&#xa;, month INTEGER&#xa;, day INTEGER&#xa;, hour INTEGER&#xa;, minute INTEGER&#xa;, second INTEGER&#xa;, month_desc VARCHAR&#x28;10&#x29;&#xa;&#x29;&#x3b;</sql>
+      <sql>CREATE TABLE performance_monitoring_sql&#xa;&#x28;&#xa;  id INTEGER &#xa;, version integer&#xa;, date_from DATE&#xa;, date_to DATE  &#xa;, time DATE&#xa;, query_id INTEGER&#xa;, query VARCHAR&#x28;2000&#x29;&#xa;, query_exec_time INTEGER&#xa;, query_exec_fetch INTEGER&#xa;, query_rows INTEGER&#xa;, year INTEGER&#xa;, month INTEGER&#xa;, day INTEGER&#xa;, hour INTEGER&#xa;, minute INTEGER&#xa;, second INTEGER&#xa;, month_desc VARCHAR&#x28;10&#x29;&#xa;&#x29;&#x3b;&#xa;&#xa;CREATE TABLE performance_monitoring_mdx&#xa;&#x28;&#xa;  id INTEGER &#xa;, version integer&#xa;, date_from DATE&#xa;, date_to DATE  &#xa;, time DATE&#xa;, query_id INTEGER&#xa;, query VARCHAR&#x28;2000&#x29;&#xa;, query_exec_time INTEGER&#xa;, year INTEGER&#xa;, month INTEGER&#xa;, day INTEGER&#xa;, hour INTEGER&#xa;, minute INTEGER&#xa;, second INTEGER&#xa;, month_desc VARCHAR&#x28;10&#x29;&#xa;&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
