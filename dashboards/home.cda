@@ -29,7 +29,7 @@
          <Parameter default="" name="lastQueriesDate" type="String"/>
       </Parameters>
       <Query>SELECT query
-FROM performance_audit_ce
+FROM performance_monitoring
 WHERE TIME = ${lastQueriesDate} AND TYPE = 'MDX'
 ORDER BY TIME DESC</Query>
    </DataAccess>
@@ -43,7 +43,7 @@ ORDER BY TIME DESC</Query>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
       <Query>SELECT QUERY as "Queries", count(QUERY) as "Quantity Executions"
-FROM performance_audit_ce
+FROM performance_monitoring
 WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
 GROUP BY QUERY
 ORDER BY QUERY DESC</Query>
@@ -60,7 +60,7 @@ ORDER BY QUERY DESC</Query>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
       <Query>SELECT QUERY_ID, QUERY_EXEC_TIME
-FROM performance_audit_ce
+FROM performance_monitoring
 WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
 ORDER BY QUERY_EXEC_TIME ASC
 LIMIT 10</Query>
@@ -77,7 +77,7 @@ LIMIT 10</Query>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
       <Query>SELECT QUERY_ID, QUERY_EXEC_TIME
-FROM performance_audit_ce
+FROM performance_monitoring
 WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
 ORDER BY QUERY_EXEC_TIME DESC
 LIMIT 10</Query>
@@ -90,7 +90,7 @@ LIMIT 10</Query>
          <Parameter default="" name="queryId" type="Integer"/>
       </Parameters>
       <Query>SELECT QUERY
-FROM performance_audit_ce
+FROM performance_monitoring
 WHERE QUERY_ID = ${queryId}</Query>
    </DataAccess>
    <DataAccess access="public" cache="false" cacheDuration="3600"
@@ -102,7 +102,7 @@ WHERE QUERY_ID = ${queryId}</Query>
          <Parameter default="" name="lastQueriesDate" type="String"/>
       </Parameters>
       <Query>SELECT query
-FROM performance_audit_ce
+FROM performance_monitoring
 WHERE TIME = ${lastQueriesDate} AND TYPE = 'SQL'
 ORDER BY TIME DESC</Query>
    </DataAccess>
