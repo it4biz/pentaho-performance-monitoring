@@ -6,8 +6,6 @@
       <Hierarchy name="Query" visible="true" hasAll="true" allMemberName="All">
         <Level name="Query" visible="true" column="QUERY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="ID" visible="true" column="QUERY_ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        </Level>
       </Hierarchy>
     </Dimension>
     <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Period">
@@ -32,13 +30,13 @@
     </Dimension>
     <Measure name="Quantity" column="QUERY" datatype="String" aggregator="distinct-count" visible="true">
     </Measure>
-    <Measure name="Quantity of Executions" column="QUERY_ID" datatype="Integer" aggregator="count" visible="true">
+    <Measure name="Quantity of Executions" column="QUERY" datatype="Integer" aggregator="count" visible="true">
     </Measure>
-    <Measure name="Average Execution Time" column="QUERY_EXEC_TIME" datatype="Integer" aggregator="avg" visible="true">
+    <Measure name="Average Execution Time (ms)" column="QUERY_EXEC_TIME" datatype="Integer" aggregator="avg" visible="true">
     </Measure>
-    <Measure name="Average Execution Time + Fetch" column="QUERY_EXEC_FETCH" datatype="Integer" aggregator="avg" visible="true">
+    <Measure name="Average Execution Time + Fetch (ms)" column="QUERY_EXEC_FETCH" datatype="Integer" aggregator="avg" visible="true">
     </Measure>
-    <Measure name="Average Returned Rows" column="QUERY_ROWS" datatype="Integer" aggregator="avg" visible="true">
+    <Measure name="Returned Rows" column="QUERY_ROWS" datatype="Integer" aggregator="sum" visible="true">
     </Measure>
   </Cube>
   <Cube name="MDX Queries" visible="true" cache="true" enabled="true">
@@ -48,8 +46,6 @@
       <Hierarchy name="Query" visible="true" hasAll="true" allMemberName="All">
         <Level name="Query" visible="true" column="QUERY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-        <Level name="ID" visible="true" column="QUERY_ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        </Level>
       </Hierarchy>
     </Dimension>
     <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Period">
@@ -74,9 +70,9 @@
     </Dimension>
     <Measure name="Quantity" column="QUERY" datatype="String" aggregator="distinct-count" visible="true">
     </Measure>
-    <Measure name="Quantity of Executions" column="QUERY_ID" datatype="Integer" aggregator="count" visible="true">
+    <Measure name="Quantity of Executions" column="QUERY" datatype="Integer" aggregator="count" visible="true">
     </Measure>
-    <Measure name="Average Execution Time" column="QUERY_EXEC_TIME" datatype="Integer" aggregator="avg" visible="true">
+    <Measure name="Average Execution Time (ms)" column="QUERY_EXEC_TIME" datatype="Integer" aggregator="avg" visible="true">
     </Measure>
   </Cube>
 </Schema>

@@ -98,50 +98,29 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Text file input</from><to>Row flattener</to><enabled>Y</enabled> </hop>
-  <hop> <from>Row flattener</from><to>Split Fields</to><enabled>Y</enabled> </hop>
   <hop> <from>Split Fields</from><to>User Defined Java Expression</to><enabled>Y</enabled> </hop>
-  <hop> <from>String operations</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
-  <hop> <from>User Defined Java Expression</from><to>Split Fields 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Split Fields 2</from><to>String operations</to><enabled>Y</enabled> </hop>
-  <hop> <from>OUTPUT</from><to>Add constants</to><enabled>Y</enabled> </hop>
   <hop> <from>Calculator</from><to>Value Mapper - Month</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add constants</from><to>Calculator</to><enabled>Y</enabled> </hop>
-  <hop> <from>Value Mapper - Month</from><to>Table output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file input</from><to>Split Fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>User Defined Java Expression</from><to>If field value is null</to><enabled>Y</enabled> </hop>
+  <hop> <from>If field value is null</from><to>Switch &#x2f; Case</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case</from><to>Queries SQL</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case</from><to>time exec and exec_fetch</to><enabled>Y</enabled> </hop>
+  <hop> <from>time exec and exec_fetch</from><to>Switch &#x2f; Case 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case 2</from><to>Queries exec</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case 2</from><to>Queries exec_fetch</to><enabled>Y</enabled> </hop>
+  <hop> <from>Split Fields 2 2</from><to>String operations 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Queries SQL</from><to>Clear fields queries sql</to><enabled>Y</enabled> </hop>
+  <hop> <from>Clear fields queries sql</from><to>Calculator</to><enabled>Y</enabled> </hop>
+  <hop> <from>Queries exec_fetch</from><to>Split Fields 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>String operations 2</from><to>Clear fields exec&#x2b;fetch</to><enabled>Y</enabled> </hop>
+  <hop> <from>Queries exec</from><to>String operations 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>String operations 3</from><to>Clear fields exec</to><enabled>Y</enabled> </hop>
+  <hop> <from>Value Mapper - Month</from><to>Multiway Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Clear fields exec</from><to>Multiway Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Clear fields exec&#x2b;fetch</from><to>Multiway Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Multiway Merge Join</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Table output</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Add constants</name>
-    <type>Constant</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>type</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>SQL</nullif>
-        <length>3</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
-      <yloc>122</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Calculator</name>
     <type>Calculator</type>
@@ -239,14 +218,14 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>908</xloc>
-      <yloc>122</yloc>
+      <xloc>967</xloc>
+      <yloc>141</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>OUTPUT</name>
+    <name>Clear fields exec</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -256,47 +235,16 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>time</name>
+    <fields>      <field>        <name>query_id</name>
         <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>query_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>query_sql</name>
-        <rename>query</rename>
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>query_exec_time</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
-      </field>      <field>        <name>query_exec_fetch</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>query_rows</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>time</name>
-        <rename>time</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>query_id</name>
+      <meta>        <name>query_id</name>
         <rename>query_id</rename>
         <type>Integer</type>
         <length>-2</length>
@@ -326,7 +274,39 @@
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>query_exec_fetch</name>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1077</xloc>
+      <yloc>271</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Clear fields exec&#x2b;fetch</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>query_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>query_exec_fetch</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>query_rows</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>query_exec_fetch</name>
         <rename>query_exec_fetch</rename>
         <type>Integer</type>
         <length>-2</length>
@@ -356,17 +336,32 @@
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
+      </meta>      <meta>        <name>query_id</name>
+        <rename>query_id</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
       </meta>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>692</xloc>
-      <yloc>122</yloc>
+      <xloc>1090</xloc>
+      <yloc>424</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Row flattener</name>
-    <type>Flattener</type>
+    <name>Clear fields queries sql</name>
+    <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -375,22 +370,156 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <field_name>row</field_name>
-      <fields>
-        <field>
-          <name>query_row_sql</name>
-          </field>
-        <field>
-          <name>query_row_time</name>
-          </field>
-        <field>
-          <name>query_row_time_fetch</name>
-          </field>
-        </fields>
+    <fields>      <field>        <name>time</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>query_id</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>query_sql</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>time</name>
+        <rename>time</rename>
+        <type>Timestamp</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>query_id</name>
+        <rename>query_id</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>861</xloc>
+      <yloc>140</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>If field value is null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>Y</selectFields>
+      <selectValuesType>N</selectValuesType>
+      <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      </valuetypes>
+    <fields>
+      <field>
+        <name>query_sql</name>
+        <value>empty</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>query_exec_time_fetch</name>
+        <value>empty</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      <field>
+        <name>query_exec_time</name>
+        <value>empty</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+        </field>
+      </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>152</xloc>
-      <yloc>122</yloc>
+      <xloc>405</xloc>
+      <yloc>261</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Queries SQL</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>719</xloc>
+      <yloc>140</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Queries exec</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>719</xloc>
+      <yloc>270</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Queries exec_fetch</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>720</xloc>
+      <yloc>423</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -406,7 +535,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-   <splitfield>query_row_sql</splitfield>
+   <splitfield>row</splitfield>
    <delimiter>&#x23;</delimiter>
    <enclosure/>
     <fields>      <field>        <name>time</name>
@@ -435,14 +564,14 @@
         <trimtype>none</trimtype>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>260</xloc>
-      <yloc>122</yloc>
+      <xloc>120</xloc>
+      <yloc>260</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Split Fields 2</name>
+    <name>Split Fields 2 2</name>
     <type>FieldSplitter</type>
     <description/>
     <distribute>Y</distribute>
@@ -481,14 +610,14 @@
         <trimtype>none</trimtype>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>476</xloc>
-      <yloc>122</yloc>
+      <xloc>838</xloc>
+      <yloc>424</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>String operations</name>
+    <name>String operations 2</name>
     <type>StringOperations</type>
     <description/>
     <distribute>Y</distribute>
@@ -499,19 +628,6 @@
            <schema_name/>
            </partitioning>
     <fields>
-      <field>
-        <in_stream_name>query_exec_time</in_stream_name>
-        <out_stream_name/>
-        <trim_type>both</trim_type>
-        <lower_upper>none</lower_upper>
-        <padding_type>none</padding_type>
-        <pad_char/>
-        <pad_len/>
-        <init_cap>no</init_cap>
-        <mask_xml>none</mask_xml>
-        <digits>digits_only</digits>
-        <remove_special_characters>none</remove_special_characters>
-      </field>
       <field>
         <in_stream_name>query_exec_fetch</in_stream_name>
         <out_stream_name/>
@@ -541,15 +657,15 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>584</xloc>
-      <yloc>122</yloc>
+      <xloc>953</xloc>
+      <yloc>424</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Table output</name>
-    <type>TableOutput</type>
+    <name>String operations 3</name>
+    <type>StringOperations</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -558,29 +674,81 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>Hibernate</connection>
-    <schema/>
-    <table>performance_monitoring</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
     <fields>
+      <field>
+        <in_stream_name>query_exec_time</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>digits_only</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1124</xloc>
-      <yloc>122</yloc>
+      <xloc>859</xloc>
+      <yloc>271</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Switch &#x2f; Case</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>query_sql</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>String</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step>Queries SQL</default_target_step>
+<cases><case><value>empty</value>
+<target_step>time exec and exec_fetch</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>524</xloc>
+      <yloc>262</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Switch &#x2f; Case 2</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>query_exec_time</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>String</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step>Queries exec</default_target_step>
+<cases><case><value>empty</value>
+<target_step>Queries exec_fetch</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>522</xloc>
+      <yloc>423</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -623,7 +791,7 @@
     <encoding/>
     <add_to_result_filenames>N</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;..&#x2f;..&#x2f;tomcat&#x2f;logs&#x2f;mondrian_sql.log</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;temp&#x2f;mondrian_sql.log</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -677,8 +845,8 @@
     <sizeFieldName>filesize</sizeFieldName>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>44</xloc>
-      <yloc>122</yloc>
+      <xloc>19</xloc>
+      <yloc>259</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -708,15 +876,15 @@
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
-       <formula><field_name>query_exec_time</field_name>
-<formula_string>query_row_time.split&#x28;&#x22;exec&#x22;&#x29;&#x5b;1&#x5d;.toString&#x28;&#x29;</formula_string>
+       <formula><field_name>query_exec_time_fetch</field_name>
+<formula_string>query_full.contains&#x28;&#x22;fetch&#x22;&#x29;&#x3f; query_full.split&#x28;&#x22;fetch&#x22;&#x29;&#x5b;1&#x5d;.toString&#x28;&#x29; &#x3a; &#x22;&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
-       <formula><field_name>query_exec_time_fetch</field_name>
-<formula_string>query_row_time_fetch.split&#x28;&#x22;fetch&#x22;&#x29;&#x5b;1&#x5d;.toString&#x28;&#x29;</formula_string>
+       <formula><field_name>query_exec_time</field_name>
+<formula_string>query_full.contains&#x28;&#x22;exec&#x22;&#x29; &#x26;&#x26; &#x21;query_full.contains&#x28;&#x22;fetch&#x22;&#x29; &#x26;&#x26; &#x21;query_full.contains&#x28;&#x22;executing sql&#x22;&#x29;&#x3f; query_full.split&#x28;&#x22;exec&#x22;&#x29;&#x5b;1&#x5d;.toString&#x28;&#x29; &#x3a; &#x22;&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -724,8 +892,8 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>368</xloc>
-      <yloc>122</yloc>
+      <xloc>255</xloc>
+      <yloc>261</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -796,8 +964,162 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1016</xloc>
-      <yloc>122</yloc>
+      <xloc>1083</xloc>
+      <yloc>141</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>time exec and exec_fetch</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>523</xloc>
+      <yloc>328</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Multiway Merge Join</name>
+    <type>MultiwayMergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>INNER</join_type>
+<step0>Value Mapper - Month</step0>
+<step1>Clear fields exec</step1>
+<step2>Clear fields exec&#x2b;fetch</step2>
+    <number_input>3</number_input>
+    <keys>
+      <key>query_id</key>
+      <key>query_id</key>
+      <key>query_id</key>
+    </keys>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1202</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>time</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>query_sql</name>
+        <rename>query</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>year</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>month_desc</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>day</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>hour</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>minute</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>second</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>query_exec_time</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>query_exec_fetch</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>query_rows</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1318</xloc>
+      <yloc>273</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Hibernate</connection>
+    <schema/>
+    <table>performance_monitoring_sql</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1420</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
