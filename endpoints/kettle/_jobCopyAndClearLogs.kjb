@@ -136,7 +136,7 @@
       <variablename>&#x24;&#x7b;os.name&#x7d;</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
-      <comparevalue>Linux</comparevalue>
+      <comparevalue>Windows</comparevalue>
       <minvalue/>
       <maxvalue/>
       <successcondition>equal</successcondition>
@@ -169,8 +169,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>596</xloc>
-      <yloc>118</yloc>
+      <xloc>593</xloc>
+      <yloc>211</yloc>
       </entry>
     <entry>
       <name>Clear log Windows</name>
@@ -192,8 +192,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>599</xloc>
-      <yloc>211</yloc>
+      <xloc>593</xloc>
+      <yloc>115</yloc>
       </entry>
   </entries>
   <hops>
@@ -239,7 +239,7 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -266,7 +266,7 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>N</evaluation>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
