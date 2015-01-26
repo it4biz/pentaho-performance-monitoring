@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
    <DataSources>
-      <Connection id="dsLastQueriesMdx" type="sql.jndi">
+      <Connection id="dsExecutionsMdx" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
-      <Connection id="dsExecutions" type="sql.jndi">
+      <Connection id="dsExecutionsSql" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
-      <Connection id="dsTopFastQueries" type="sql.jndi">
+      <Connection id="dsTopFastMDXQueries" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
+      <Connection id="dsTopFastsSQLQueries" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
       <Connection id="dsTopSlowQueries" type="sql.jndi">
@@ -16,52 +19,70 @@
       <Connection id="dsQueryId" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
+      <Connection id="dsLastQueriesMdx" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
       <Connection id="dsLastQueriesSql" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
    </DataSources>
-   <DataAccess access="public" cache="false" cacheDuration="3600"
-               connection="dsLastQueriesMdx"
-               id="dsLastQueriesMdx"
+   <DataAccess access="public" cache="false" cacheDuration="3600" connection="dsExecutionsMdx"
+               id="dsExecutionsMdx"
                type="sql">
       <Columns/>
       <Parameters>
-         <Parameter default="" name="lastQueriesDate" type="String"/>
-      </Parameters>
-      <Query>SELECT query
-FROM performance_monitoring
-WHERE TIME = ${lastQueriesDate} AND TYPE = 'MDX'
-ORDER BY TIME DESC</Query>
-   </DataAccess>
-   <DataAccess access="public" cache="false" cacheDuration="3600" connection="dsExecutions"
-               id="dsExecutions"
-               type="sql">
-      <Columns/>
-      <Parameters>
-         <Parameter default="" name="type" type="String"/>
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
       <Query>SELECT QUERY as "Queries", count(QUERY) as "Quantity Executions"
-FROM performance_monitoring
-WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
+FROM performance_monitoring_mdx
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
+GROUP BY QUERY
+ORDER BY QUERY DESC</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600" connection="dsExecutionsSql"
+               id="dsExecutionsSql"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="startOverview" type="String"/>
+         <Parameter default="" name="endOverview" type="String"/>
+      </Parameters>
+      <Query>SELECT QUERY as "Queries", count(QUERY) as "Quantity Executions"
+FROM performance_monitoring_sql
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
 GROUP BY QUERY
 ORDER BY QUERY DESC</Query>
    </DataAccess>
    <DataAccess access="public" cache="false" cacheDuration="3600"
-               connection="dsTopFastQueries"
-               id="dsTopFastQueries"
+               connection="dsTopFastMDXQueries"
+               id="dsTopFastMDXQueries"
                type="sql">
       <Columns/>
       <Parameters>
          <Parameter default="" name="lastQueriesDate" type="String"/>
-         <Parameter default="" name="type" type="String"/>
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT QUERY_ID, QUERY_EXEC_TIME
-FROM performance_monitoring
-WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
+      <Query>SELECT SUBSTR(QUERY,1,4) as query, QUERY_EXEC_TIME
+FROM performance_monitoring_mdx
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
+ORDER BY QUERY_EXEC_TIME ASC
+LIMIT 10</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600"
+               connection="dsTopFastsSQLQueries"
+               id="dsTopFastsSQLQueries"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="lastQueriesDate" type="String"/>
+         <Parameter default="" name="startOverview" type="String"/>
+         <Parameter default="" name="endOverview" type="String"/>
+      </Parameters>
+      <Query>SELECT SUBSTR(QUERY,1,4) as query, QUERY_EXEC_TIME
+FROM performance_monitoring_sql
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
 ORDER BY QUERY_EXEC_TIME ASC
 LIMIT 10</Query>
    </DataAccess>
@@ -76,9 +97,9 @@ LIMIT 10</Query>
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT QUERY_ID, QUERY_EXEC_TIME
-FROM performance_monitoring
-WHERE TIME between ${startOverview} AND ${endOverview} AND TYPE = ${type}
+      <Query>SELECT QUERY, QUERY_EXEC_TIME
+FROM ${type}
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
 ORDER BY QUERY_EXEC_TIME DESC
 LIMIT 10</Query>
    </DataAccess>
@@ -94,6 +115,19 @@ FROM performance_monitoring
 WHERE QUERY_ID = ${queryId}</Query>
    </DataAccess>
    <DataAccess access="public" cache="false" cacheDuration="3600"
+               connection="dsLastQueriesMdx"
+               id="dsLastQueriesMdx"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="lastQueriesDate" type="String"/>
+      </Parameters>
+      <Query>SELECT query
+FROM performance_monitoring_mdx
+WHERE CAST(TIME AS DATE) = ${lastQueriesDate}
+ORDER BY TIME DESC</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600"
                connection="dsLastQueriesSql"
                id="dsLastQueriesSql"
                type="sql">
@@ -102,8 +136,8 @@ WHERE QUERY_ID = ${queryId}</Query>
          <Parameter default="" name="lastQueriesDate" type="String"/>
       </Parameters>
       <Query>SELECT query
-FROM performance_monitoring
-WHERE TIME = ${lastQueriesDate} AND TYPE = 'SQL'
+FROM performance_monitoring_sql
+WHERE CAST(TIME AS DATE) = ${lastQueriesDate}
 ORDER BY TIME DESC</Query>
    </DataAccess>
 </CDADescriptor>
