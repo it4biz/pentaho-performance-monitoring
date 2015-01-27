@@ -7,16 +7,16 @@
       <Connection id="dsExecutionsSql" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
+      <Connection id="dsTopSlowMDXQueries" type="sql.jndi">
+         <Jndi>Hibernate</Jndi>
+      </Connection>
       <Connection id="dsTopFastMDXQueries" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
-      <Connection id="dsTopFastsSQLQueries" type="sql.jndi">
+      <Connection id="dsTopSlowSQLQueries" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
-      <Connection id="dsTopSlowQueries" type="sql.jndi">
-         <Jndi>Hibernate</Jndi>
-      </Connection>
-      <Connection id="dsQueryId" type="sql.jndi">
+      <Connection id="dsTopFastSQLQueries" type="sql.jndi">
          <Jndi>Hibernate</Jndi>
       </Connection>
       <Connection id="dsLastQueriesMdx" type="sql.jndi">
@@ -34,11 +34,11 @@
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT QUERY as "Queries", count(QUERY) as "Quantity Executions"
+      <Query>SELECT QUERY as "Queries", COUNT(QUERY) as "Quantity Executions", AVG(QUERY_EXEC_TIME) AS "Time Execution (AVG)"
 FROM performance_monitoring_mdx
-WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
+WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
-ORDER BY QUERY DESC</Query>
+ORDER BY COUNT(QUERY) DESC</Query>
    </DataAccess>
    <DataAccess access="public" cache="false" cacheDuration="3600" connection="dsExecutionsSql"
                id="dsExecutionsSql"
@@ -48,11 +48,27 @@ ORDER BY QUERY DESC</Query>
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT QUERY as "Queries", count(QUERY) as "Quantity Executions"
+      <Query>SELECT QUERY as "Queries", COUNT(QUERY) as "Quantity Executions", AVG(QUERY_EXEC_TIME) AS "Time Execution (AVG)"
 FROM performance_monitoring_sql
-WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
+WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
-ORDER BY QUERY DESC</Query>
+ORDER BY COUNT(QUERY) DESC</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="false" cacheDuration="3600"
+               connection="dsTopSlowMDXQueries"
+               id="dsTopSlowMDXQueries"
+               type="sql">
+      <Columns/>
+      <Parameters>
+         <Parameter default="" name="startOverview" type="String"/>
+         <Parameter default="" name="endOverview" type="String"/>
+      </Parameters>
+      <Query>SELECT QUERY, AVG(QUERY_EXEC_TIME)
+FROM performance_monitoring_mdx
+WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+GROUP BY QUERY
+ORDER BY AVG(QUERY_EXEC_TIME) DESC
+LIMIT 10</Query>
    </DataAccess>
    <DataAccess access="public" cache="false" cacheDuration="3600"
                connection="dsTopFastMDXQueries"
@@ -60,59 +76,47 @@ ORDER BY QUERY DESC</Query>
                type="sql">
       <Columns/>
       <Parameters>
-         <Parameter default="" name="lastQueriesDate" type="String"/>
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT SUBSTR(QUERY,1,4) as query, QUERY_EXEC_TIME
+      <Query>SELECT QUERY, AVG(QUERY_EXEC_TIME)
 FROM performance_monitoring_mdx
-WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
-ORDER BY QUERY_EXEC_TIME ASC
+WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+GROUP BY QUERY
+ORDER BY AVG(QUERY_EXEC_TIME) ASC
 LIMIT 10</Query>
    </DataAccess>
    <DataAccess access="public" cache="false" cacheDuration="3600"
-               connection="dsTopFastsSQLQueries"
-               id="dsTopFastsSQLQueries"
+               connection="dsTopSlowSQLQueries"
+               id="dsTopSlowSQLQueries"
                type="sql">
       <Columns/>
       <Parameters>
-         <Parameter default="" name="lastQueriesDate" type="String"/>
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT SUBSTR(QUERY,1,4) as query, QUERY_EXEC_TIME
+      <Query>SELECT QUERY, AVG(QUERY_EXEC_TIME)
 FROM performance_monitoring_sql
-WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
-ORDER BY QUERY_EXEC_TIME ASC
+WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+GROUP BY QUERY
+ORDER BY AVG(QUERY_EXEC_TIME) DESC
 LIMIT 10</Query>
    </DataAccess>
    <DataAccess access="public" cache="false" cacheDuration="3600"
-               connection="dsTopSlowQueries"
-               id="dsTopSlowQueries"
+               connection="dsTopFastSQLQueries"
+               id="dsTopFastSQLQueries"
                type="sql">
       <Columns/>
       <Parameters>
-         <Parameter default="" name="lastQueriesDate" type="String"/>
-         <Parameter default="" name="type" type="String"/>
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT QUERY, QUERY_EXEC_TIME
-FROM ${type}
-WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview}
-ORDER BY QUERY_EXEC_TIME DESC
+      <Query>SELECT QUERY, AVG(QUERY_EXEC_TIME)
+FROM performance_monitoring_sql
+WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+GROUP BY QUERY
+ORDER BY AVG(QUERY_EXEC_TIME) ASC
 LIMIT 10</Query>
-   </DataAccess>
-   <DataAccess access="public" cache="false" cacheDuration="3600" connection="dsQueryId"
-               id="dsQueryId"
-               type="sql">
-      <Columns/>
-      <Parameters>
-         <Parameter default="" name="queryId" type="Integer"/>
-      </Parameters>
-      <Query>SELECT QUERY
-FROM performance_monitoring
-WHERE QUERY_ID = ${queryId}</Query>
    </DataAccess>
    <DataAccess access="public" cache="false" cacheDuration="3600"
                connection="dsLastQueriesMdx"
