@@ -36,7 +36,7 @@
       </Parameters>
       <Query>SELECT QUERY as "Queries", COUNT(QUERY) as "Quantity Executions", AVG(QUERY_EXEC_TIME) AS "Time Execution (AVG)"
 FROM performance_monitoring_mdx
-WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
 ORDER BY COUNT(QUERY) DESC</Query>
    </DataAccess>
@@ -50,7 +50,7 @@ ORDER BY COUNT(QUERY) DESC</Query>
       </Parameters>
       <Query>SELECT QUERY as "Queries", COUNT(QUERY) as "Quantity Executions", AVG(QUERY_EXEC_TIME) AS "Time Execution (AVG)"
 FROM performance_monitoring_sql
-WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
 ORDER BY COUNT(QUERY) DESC</Query>
    </DataAccess>
@@ -65,7 +65,7 @@ ORDER BY COUNT(QUERY) DESC</Query>
       </Parameters>
       <Query>SELECT QUERY, AVG(QUERY_EXEC_TIME)
 FROM performance_monitoring_mdx
-WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
 ORDER BY AVG(QUERY_EXEC_TIME) DESC
 LIMIT 10</Query>
@@ -81,7 +81,7 @@ LIMIT 10</Query>
       </Parameters>
       <Query>SELECT QUERY, AVG(QUERY_EXEC_TIME)
 FROM performance_monitoring_mdx
-WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
 ORDER BY AVG(QUERY_EXEC_TIME) ASC
 LIMIT 10</Query>
@@ -97,7 +97,7 @@ LIMIT 10</Query>
       </Parameters>
       <Query>SELECT QUERY, AVG(QUERY_EXEC_TIME)
 FROM performance_monitoring_sql
-WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
 ORDER BY AVG(QUERY_EXEC_TIME) DESC
 LIMIT 10</Query>
@@ -113,7 +113,7 @@ LIMIT 10</Query>
       </Parameters>
       <Query>SELECT QUERY, AVG(QUERY_EXEC_TIME)
 FROM performance_monitoring_sql
-WHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
+WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
 ORDER BY AVG(QUERY_EXEC_TIME) ASC
 LIMIT 10</Query>

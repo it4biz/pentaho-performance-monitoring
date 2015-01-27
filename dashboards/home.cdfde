@@ -2411,36 +2411,6 @@
       "type": "Float"
      },
      {
-      "name": "baseAxisBandSize",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSizeMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSizeMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacing",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacingMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
       "name": "baseAxisClickAction",
       "value": "",
       "type": "JavaScript"
@@ -2484,11 +2454,6 @@
       "name": "baseAxisSizeMax",
       "value": "",
       "type": "String"
-     },
-     {
-      "name": "baseAxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
      },
      {
       "name": "baseAxisTicks",
@@ -2941,21 +2906,6 @@
       "type": "Boolean"
      },
      {
-      "name": "ortho2AxisTickUnit",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickUnitMax",
-      "value": "Infinity",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickUnitMin",
-      "value": "0",
-      "type": "String"
-     },
-     {
       "name": "ortho2AxisTitle",
       "value": "",
       "type": "String"
@@ -3084,21 +3034,6 @@
       "name": "orthoAxisTicks",
       "value": true,
       "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisTickUnit",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickUnitMax",
-      "value": "Infinity",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickUnitMin",
-      "value": "0",
-      "type": "String"
      },
      {
       "name": "orthoAxisTitle",
@@ -3685,36 +3620,6 @@
       "type": "Float"
      },
      {
-      "name": "baseAxisBandSize",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSizeMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSizeMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacing",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacingMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
       "name": "baseAxisClickAction",
       "value": "",
       "type": "JavaScript"
@@ -3758,11 +3663,6 @@
       "name": "baseAxisSizeMax",
       "value": "",
       "type": "String"
-     },
-     {
-      "name": "baseAxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
      },
      {
       "name": "baseAxisTicks",
@@ -4215,21 +4115,6 @@
       "type": "Boolean"
      },
      {
-      "name": "ortho2AxisTickUnit",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickUnitMax",
-      "value": "Infinity",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickUnitMin",
-      "value": "0",
-      "type": "String"
-     },
-     {
       "name": "ortho2AxisTitle",
       "value": "",
       "type": "String"
@@ -4358,21 +4243,6 @@
       "name": "orthoAxisTicks",
       "value": true,
       "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisTickUnit",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickUnitMax",
-      "value": "Infinity",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickUnitMin",
-      "value": "0",
-      "type": "String"
      },
      {
       "name": "orthoAxisTitle",
@@ -4959,36 +4829,6 @@
       "type": "Float"
      },
      {
-      "name": "baseAxisBandSize",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSizeMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSizeMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacing",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacingMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
       "name": "baseAxisClickAction",
       "value": "",
       "type": "JavaScript"
@@ -5032,11 +4872,6 @@
       "name": "baseAxisSizeMax",
       "value": "",
       "type": "String"
-     },
-     {
-      "name": "baseAxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
      },
      {
       "name": "baseAxisTicks",
@@ -5489,21 +5324,6 @@
       "type": "Boolean"
      },
      {
-      "name": "ortho2AxisTickUnit",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickUnitMax",
-      "value": "Infinity",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickUnitMin",
-      "value": "0",
-      "type": "String"
-     },
-     {
       "name": "ortho2AxisTitle",
       "value": "",
       "type": "String"
@@ -5632,21 +5452,6 @@
       "name": "orthoAxisTicks",
       "value": true,
       "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisTickUnit",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickUnitMax",
-      "value": "Infinity",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickUnitMin",
-      "value": "0",
-      "type": "String"
      },
      {
       "name": "orthoAxisTitle",
@@ -6233,36 +6038,6 @@
       "type": "Float"
      },
      {
-      "name": "baseAxisBandSize",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSizeMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSizeMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacing",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacingMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "baseAxisBandSpacingMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
       "name": "baseAxisClickAction",
       "value": "",
       "type": "JavaScript"
@@ -6306,11 +6081,6 @@
       "name": "baseAxisSizeMax",
       "value": "",
       "type": "String"
-     },
-     {
-      "name": "baseAxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
      },
      {
       "name": "baseAxisTicks",
@@ -6763,21 +6533,6 @@
       "type": "Boolean"
      },
      {
-      "name": "ortho2AxisTickUnit",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickUnitMax",
-      "value": "Infinity",
-      "type": "String"
-     },
-     {
-      "name": "ortho2AxisTickUnitMin",
-      "value": "0",
-      "type": "String"
-     },
-     {
       "name": "ortho2AxisTitle",
       "value": "",
       "type": "String"
@@ -6906,21 +6661,6 @@
       "name": "orthoAxisTicks",
       "value": true,
       "type": "Boolean"
-     },
-     {
-      "name": "orthoAxisTickUnit",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickUnitMax",
-      "value": "Infinity",
-      "type": "String"
-     },
-     {
-      "name": "orthoAxisTickUnitMin",
-      "value": "0",
-      "type": "String"
      },
      {
       "name": "orthoAxisTitle",
@@ -7492,7 +7232,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT QUERY as \"Queries\", COUNT(QUERY) as \"Quantity Executions\", AVG(QUERY_EXEC_TIME) AS \"Time Execution (AVG)\"\nFROM performance_monitoring_mdx\nWHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY COUNT(QUERY) DESC",
+      "value": "SELECT QUERY as \"Queries\", COUNT(QUERY) as \"Quantity Executions\", AVG(QUERY_EXEC_TIME) AS \"Time Execution (AVG)\"\nFROM performance_monitoring_mdx\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY COUNT(QUERY) DESC",
       "type": "SqlQuery"
      },
      {
@@ -7558,7 +7298,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT QUERY as \"Queries\", COUNT(QUERY) as \"Quantity Executions\", AVG(QUERY_EXEC_TIME) AS \"Time Execution (AVG)\"\nFROM performance_monitoring_sql\nWHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY COUNT(QUERY) DESC",
+      "value": "SELECT QUERY as \"Queries\", COUNT(QUERY) as \"Quantity Executions\", AVG(QUERY_EXEC_TIME) AS \"Time Execution (AVG)\"\nFROM performance_monitoring_sql\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY COUNT(QUERY) DESC",
       "type": "SqlQuery"
      },
      {
@@ -7624,7 +7364,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT QUERY, AVG(QUERY_EXEC_TIME)\nFROM performance_monitoring_mdx\nWHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY AVG(QUERY_EXEC_TIME) DESC\nLIMIT 10",
+      "value": "SELECT QUERY, AVG(QUERY_EXEC_TIME)\nFROM performance_monitoring_mdx\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY AVG(QUERY_EXEC_TIME) DESC\nLIMIT 10",
       "type": "SqlQuery"
      },
      {
@@ -7690,7 +7430,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT QUERY, AVG(QUERY_EXEC_TIME)\nFROM performance_monitoring_mdx\nWHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY AVG(QUERY_EXEC_TIME) ASC\nLIMIT 10",
+      "value": "SELECT QUERY, AVG(QUERY_EXEC_TIME)\nFROM performance_monitoring_mdx\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY AVG(QUERY_EXEC_TIME) ASC\nLIMIT 10",
       "type": "SqlQuery"
      },
      {
@@ -7756,7 +7496,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT QUERY, AVG(QUERY_EXEC_TIME)\nFROM performance_monitoring_sql\nWHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY AVG(QUERY_EXEC_TIME) DESC\nLIMIT 10",
+      "value": "SELECT QUERY, AVG(QUERY_EXEC_TIME)\nFROM performance_monitoring_sql\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY AVG(QUERY_EXEC_TIME) DESC\nLIMIT 10",
       "type": "SqlQuery"
      },
      {
@@ -7822,7 +7562,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT QUERY, AVG(QUERY_EXEC_TIME)\nFROM performance_monitoring_sql\nWHERE TIME between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY AVG(QUERY_EXEC_TIME) ASC\nLIMIT 10",
+      "value": "SELECT QUERY, AVG(QUERY_EXEC_TIME)\nFROM performance_monitoring_sql\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY AVG(QUERY_EXEC_TIME) ASC\nLIMIT 10",
       "type": "SqlQuery"
      },
      {
