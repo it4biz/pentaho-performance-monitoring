@@ -755,11 +755,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[[\"lastQueriesDate\",\"lastQueriesDate\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[\"Queries MDX\"]",
       "type": "Array"
@@ -783,6 +778,11 @@
       "name": "colSortable",
       "value": "[]",
       "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"lastQueriesDate\",\"lastQueriesDate\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "expandParameters",
@@ -840,14 +840,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -958,11 +958,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[[\"lastQueriesDate\",\"lastQueriesDate\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[\"Queries SQL\"]",
       "type": "Array"
@@ -986,6 +981,11 @@
       "name": "colSortable",
       "value": "[]",
       "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"lastQueriesDate\",\"lastQueriesDate\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "expandParameters",
@@ -1043,14 +1043,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -1147,7 +1147,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:refresh}','${p:startOverview}','${p:endOverview}','${p:typeSql}']",
+      "value": "['${p:startOverview}','${p:endOverview}','${p:typeSql}']",
       "type": "Listeners"
      },
      {
@@ -1159,11 +1159,6 @@
       "name": "language",
       "value": "",
       "type": "JavaScript"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"endOverview\",\"endOverview\"],[\"startOverview\",\"startOverview\"]]",
-      "type": "ValuesArray"
      },
      {
       "name": "colHeaders",
@@ -1189,6 +1184,11 @@
       "name": "colSortable",
       "value": "[]",
       "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"endOverview\",\"endOverview\"],[\"startOverview\",\"startOverview\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "expandParameters",
@@ -1246,14 +1246,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -1364,11 +1364,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "parameters",
-      "value": "[[\"endOverview\",\"endOverview\"],[\"startOverview\",\"startOverview\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
@@ -1392,6 +1387,11 @@
       "name": "colSortable",
       "value": "[]",
       "type": "Array"
+     },
+     {
+      "name": "parameters",
+      "value": "[[\"endOverview\",\"endOverview\"],[\"startOverview\",\"startOverview\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "expandParameters",
@@ -1449,14 +1449,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -1568,7 +1568,7 @@
      },
      {
       "name": "successCallback",
-      "value": "function f(){\n    Dashboards.decrementRunningCalls();\n    Dashboards.fireChange(\"refresh\",\"\");\n} ",
+      "value": "function f(){\n    Dashboards.decrementRunningCalls();\n    \n    type='MDX';\n    Dashboards.fireChange(\"refresh\",\"\");\n} ",
       "type": "JavaScript"
      },
      {
@@ -2077,7 +2077,7 @@
      },
      {
       "name": "listeners",
-      "value": "[]",
+      "value": "['${p:refresh}']",
       "type": "Listeners"
      },
      {
@@ -2316,8 +2316,13 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "150",
       "type": "Integer"
      },
      {
@@ -2326,13 +2331,8 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "150",
       "type": "Integer"
      },
      {
@@ -2356,12 +2356,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -3525,8 +3525,13 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "150",
       "type": "Integer"
      },
      {
@@ -3535,13 +3540,8 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "150",
       "type": "Integer"
      },
      {
@@ -3565,12 +3565,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -4720,7 +4720,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:refresh}','${p:startOverview}','${p:endOverview}','${p:typeSql}']",
+      "value": "['${p:startOverview}','${p:endOverview}','${p:typeSql}']",
       "type": "Listeners"
      },
      {
@@ -4734,8 +4734,13 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "150",
       "type": "Integer"
      },
      {
@@ -4744,13 +4749,8 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "150",
       "type": "Integer"
      },
      {
@@ -4774,12 +4774,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -5929,7 +5929,7 @@
      },
      {
       "name": "listeners",
-      "value": "['${p:refresh}','${p:startOverview}','${p:endOverview}','${p:typeSql}']",
+      "value": "['${p:startOverview}','${p:endOverview}','${p:typeSql}']",
       "type": "Listeners"
      },
      {
@@ -5943,8 +5943,13 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "150",
       "type": "Integer"
      },
      {
@@ -5953,13 +5958,8 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "150",
       "type": "Integer"
      },
      {
@@ -5983,12 +5983,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
