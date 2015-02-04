@@ -653,7 +653,7 @@
      },
      {
       "name": "html",
-      "value": "<div id=\"footer\" class=\"col-sm-12\">\n    <hr>\n    <div class=\"container\">\n        <p class=\"text-muted credit\">\n            <div class=\"pull-right\">\n                Powered by\n                <a  href=\"http://it4biz.com.br\" target=\"no_blank\" title=\"IT4biz IT Solutions\">\n                    <img                    \n                        src=\"../../../api/repos/pentaho-ce-audit/static/custom/img/logo.png\"\n                    >\n                </a> \n            </div>\n            <div>\n            <label>Please help us do more, with just a “Like” on our Facebook page</label><br> \n            <div\n                class=\"fb-like\" \n                data-href=\"https://www.facebook.com/it4biz\" \n                data-layout=\"button\" \n                data-action=\"like\" \n                data-show-faces=\"true\" \n                data-share=\"true\">                \n            </div><br>\n            <label>or a “follow us” on twitter</label><br>\n            <a \n                class=\"twitter-hashtag-button\"\n                href=\"https://twitter.com/intent/tweet?button_hashtag=PentahoCEAudit&text=I have installed Pentaho CE Audit from @it4bizbrazil. You should try it on @pentaho Marketplace.\"\n                data-related=\"twitter\">\n                Tweet #PentahoCEAudit\n            </a>\n            <a \n                class=\"twitter-follow-button\"\n                href=\"https://twitter.com/it4bizbrazil\"\n                data-show-count=\"false\"\n                data-lang=\"en\">\n                Follow @it4bizbrazil\n            </a>\n        </div>\n        </p>\n        \n    </div>        \n</div> ",
+      "value": "<div id=\"footer\" class=\"col-sm-12\">\n    <hr>\n    <div class=\"container\">\n        <p class=\"text-muted credit\">\n            <div class=\"pull-right\">\n                Powered by\n                <a  href=\"http://it4biz.com.br\" target=\"no_blank\" title=\"IT4biz IT Solutions\">\n                    <img                    \n                        src=\"../../../api/repos/pentaho-performance-monitoring/static/custom/img/logo.png\"\n                    >\n                </a> \n            </div>\n            <div>\n            <label>Please help us do more, with just a “Like” on our Facebook page</label><br> \n            <div\n                class=\"fb-like\" \n                data-href=\"https://www.facebook.com/it4biz\" \n                data-layout=\"button\" \n                data-action=\"like\" \n                data-show-faces=\"true\" \n                data-share=\"true\">                \n            </div><br>\n            <label>or a “follow us” on twitter</label><br>\n            <a \n                class=\"twitter-hashtag-button\"\n                href=\"https://twitter.com/intent/tweet?button_hashtag=PentahoCEAudit&text=I have installed Pentaho CE Audit from @it4bizbrazil. You should try it on @pentaho Marketplace.\"\n                data-related=\"twitter\">\n                Tweet #PentahoCEAudit\n            </a>\n            <a \n                class=\"twitter-follow-button\"\n                href=\"https://twitter.com/it4bizbrazil\"\n                data-show-count=\"false\"\n                data-lang=\"en\">\n                Follow @it4bizbrazil\n            </a>\n        </div>\n        </p>\n        \n    </div>        \n</div> ",
       "type": "Html"
      },
      {
@@ -865,11 +865,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "parameters",
       "value": "[[\"lastQueriesDate\",\"lastQueriesDate\"]]",
       "type": "ValuesArray"
@@ -891,6 +886,11 @@
      },
      {
       "name": "colWidths",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "colSortable",
       "value": "[]",
       "type": "Array"
      },
@@ -950,14 +950,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -1068,11 +1068,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "parameters",
       "value": "[[\"lastQueriesDate\",\"lastQueriesDate\"]]",
       "type": "ValuesArray"
@@ -1094,6 +1089,11 @@
      },
      {
       "name": "colWidths",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "colSortable",
       "value": "[]",
       "type": "Array"
      },
@@ -1153,14 +1153,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -1271,11 +1271,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "parameters",
       "value": "[[\"endOverview\",\"endOverview\"],[\"startOverview\",\"startOverview\"]]",
       "type": "ValuesArray"
@@ -1298,6 +1293,11 @@
      {
       "name": "colWidths",
       "value": "[\"80%\",\"10%\",\"10%\"]",
+      "type": "Array"
+     },
+     {
+      "name": "colSortable",
+      "value": "[]",
       "type": "Array"
      },
      {
@@ -1356,14 +1356,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -1474,11 +1474,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "parameters",
       "value": "[[\"endOverview\",\"endOverview\"],[\"startOverview\",\"startOverview\"]]",
       "type": "ValuesArray"
@@ -1501,6 +1496,11 @@
      {
       "name": "colWidths",
       "value": "[\"80%\",\"10%\",\"10%\"]",
+      "type": "Array"
+     },
+     {
+      "name": "colSortable",
+      "value": "[]",
       "type": "Array"
      },
      {
@@ -1559,14 +1559,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -2537,7 +2537,12 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "width",
       "value": "",
       "type": "Integer"
      },
@@ -2547,12 +2552,7 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -2577,12 +2577,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
@@ -3746,7 +3746,12 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "width",
       "value": "",
       "type": "Integer"
      },
@@ -3756,12 +3761,7 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -3786,12 +3786,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
@@ -4955,7 +4955,12 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "width",
       "value": "",
       "type": "Integer"
      },
@@ -4965,12 +4970,7 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -4995,12 +4995,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
@@ -6164,7 +6164,12 @@
       "type": "Datasource"
      },
      {
-      "name": "refreshPeriod",
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "width",
       "value": "",
       "type": "Integer"
      },
@@ -6174,12 +6179,7 @@
       "type": "Integer"
      },
      {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
       "type": "Integer"
      },
@@ -6204,12 +6204,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
