@@ -35,7 +35,7 @@ This projects is maintained by IT4biz IT Solutions from Brazil with help the Pen
 
 * Cesar Domingos [(@cesardomingos)](https://twitter.com/cesardomingos)
 * Fábio de Salles [(@blog)](https://geekbi.wordpress.com) 
-* Brandon Jackson (@usbrandon)
+* Brandon Jackson [(@usbrandon)](https://twitter.com/usbrandon)
 
 
 ###Changelog
