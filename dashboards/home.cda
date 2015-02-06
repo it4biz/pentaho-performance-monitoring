@@ -34,7 +34,7 @@
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT QUERY as "Queries", COUNT(QUERY) as "Quantity Executions", AVG(QUERY_EXEC_TIME) AS "Time Execution (AVG)"
+      <Query>SELECT QUERY as "Queries", COUNT(QUERY) as "Quantity Executions", AVG(QUERY_EXEC_TIME) AS "Time execution in ms (Average)"
 FROM performance_monitoring_mdx
 WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY
@@ -48,7 +48,7 @@ ORDER BY COUNT(QUERY) DESC</Query>
          <Parameter default="" name="startOverview" type="String"/>
          <Parameter default="" name="endOverview" type="String"/>
       </Parameters>
-      <Query>SELECT QUERY as "Queries", COUNT(QUERY) as "Quantity Executions", AVG(QUERY_EXEC_TIME) AS "Time Execution (AVG)"
+      <Query>SELECT QUERY as "Queries", COUNT(QUERY) as "Quantity Executions", AVG(QUERY_EXEC_TIME) AS "Time execution in ms (Average)"
 FROM performance_monitoring_sql
 WHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME&gt;0
 GROUP BY QUERY

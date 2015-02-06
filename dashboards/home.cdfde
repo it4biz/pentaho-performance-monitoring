@@ -865,11 +865,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[]",
       "type": "Array"
@@ -893,6 +888,11 @@
       "name": "colHeaders",
       "value": "[\"Queries MDX\"]",
       "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[]",
+      "type": "colTypesCustom"
      },
      {
       "name": "expandParameters",
@@ -950,14 +950,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -1068,11 +1068,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[]",
       "type": "Array"
@@ -1096,6 +1091,11 @@
       "name": "colHeaders",
       "value": "[\"Queries SQL\"]",
       "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[]",
+      "type": "colTypesCustom"
      },
      {
       "name": "expandParameters",
@@ -1153,14 +1153,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -1271,11 +1271,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[]",
       "type": "Array"
@@ -1299,6 +1294,11 @@
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[]",
+      "type": "colTypesCustom"
      },
      {
       "name": "expandParameters",
@@ -1356,14 +1356,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -1474,11 +1474,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[]",
       "type": "Array"
@@ -1502,6 +1497,11 @@
       "name": "colHeaders",
       "value": "[]",
       "type": "Array"
+     },
+     {
+      "name": "colTypes",
+      "value": "[]",
+      "type": "colTypesCustom"
      },
      {
       "name": "expandParameters",
@@ -1559,14 +1559,14 @@
       "type": "Datasource"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -2537,8 +2537,13 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "150",
       "type": "Integer"
      },
      {
@@ -2547,13 +2552,8 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "150",
       "type": "Integer"
      },
      {
@@ -2577,12 +2577,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -3746,8 +3746,13 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "150",
       "type": "Integer"
      },
      {
@@ -3756,13 +3761,8 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "150",
       "type": "Integer"
      },
      {
@@ -3786,12 +3786,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -4955,8 +4955,13 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "150",
       "type": "Integer"
      },
      {
@@ -4965,13 +4970,8 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "150",
       "type": "Integer"
      },
      {
@@ -4995,12 +4995,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -6164,8 +6164,13 @@
       "type": "Datasource"
      },
      {
-      "name": "width",
+      "name": "refreshPeriod",
       "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "150",
       "type": "Integer"
      },
      {
@@ -6174,13 +6179,8 @@
       "type": "Integer"
      },
      {
-      "name": "refreshPeriod",
+      "name": "width",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "150",
       "type": "Integer"
      },
      {
@@ -6204,12 +6204,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -7471,7 +7471,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT QUERY as \"Queries\", COUNT(QUERY) as \"Quantity Executions\", AVG(QUERY_EXEC_TIME) AS \"Time Execution (AVG)\"\nFROM performance_monitoring_mdx\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY COUNT(QUERY) DESC",
+      "value": "SELECT QUERY as \"Queries\", COUNT(QUERY) as \"Quantity Executions\", AVG(QUERY_EXEC_TIME) AS \"Time execution in ms (Average)\"\nFROM performance_monitoring_mdx\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY COUNT(QUERY) DESC",
       "type": "SqlQuery"
      },
      {
@@ -7537,7 +7537,7 @@
      },
      {
       "name": "query",
-      "value": "SELECT QUERY as \"Queries\", COUNT(QUERY) as \"Quantity Executions\", AVG(QUERY_EXEC_TIME) AS \"Time Execution (AVG)\"\nFROM performance_monitoring_sql\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY COUNT(QUERY) DESC",
+      "value": "SELECT QUERY as \"Queries\", COUNT(QUERY) as \"Quantity Executions\", AVG(QUERY_EXEC_TIME) AS \"Time execution in ms (Average)\"\nFROM performance_monitoring_sql\nWHERE CAST(TIME AS DATE) between ${startOverview} AND ${endOverview} AND QUERY_EXEC_TIME>0\nGROUP BY QUERY\nORDER BY COUNT(QUERY) DESC",
       "type": "SqlQuery"
      },
      {
