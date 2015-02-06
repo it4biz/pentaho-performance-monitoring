@@ -1,11 +1,19 @@
-# Pentaho Performance Monitoring
+# Pentaho Performance Monitoring Plugin
 
-Welcome to Pentaho Performance Monitoring Plugin.
+The plugin is an open source project that helps Pentaho BI Administrators visualize performance statistics.
 
-What is Pentaho Performance Monitoring Plugin? 
+Examples include:
 
-It is an open source project that helps Pentaho BI Admin users to visualize statistics like: 
-??
+    The most frequently run MDX and SQL queries
+    Showing who uses the BI Portal most often
+    Measures for which queries take the longest time to execute
+    Many other statistics are captures and available as well as the examples above.
+
+This plug-in will apply automatically an Environment configuration.
+
+For more information visit our site.
+
+Having trouble with this project? Feel free to send us an e-mail at info@it4biz.com.br or create a issue.
 
 ### Learn more
 * Feel free to use it for Production Environment if it works correctly for you.
@@ -27,6 +35,7 @@ This projects is maintained by IT4biz IT Solutions from Brazil with help the Pen
 
 * Cesar Domingos [(@cesardomingos)](https://twitter.com/cesardomingos)
 * Fábio de Salles [(@blog)](https://geekbi.wordpress.com) 
+* Brandon Jackson (@usbrandon)
 
 
 ###Changelog
