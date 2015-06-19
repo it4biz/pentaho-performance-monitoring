@@ -21,6 +21,7 @@ Having trouble with this project? Feel free to send us an e-mail at info@it4biz.
 
 ### Installation
 * Please use Pentaho Marketplace.
+* It does not work in a Windows Server, please use this plug-in only with Linux or Mac 
 
 ### Support
 * If you need support please feel free to create a issue here https://github.com/it4biz/pentaho-performance-monitoring/issues we will do our best to help you.
@@ -41,7 +42,3 @@ This projects is maintained by IT4biz IT Solutions from Brazil with help the Pen
 ###Changelog
 
 1.0 Alpha version (Not ready for Production Environment, just for internal tests):
-
-
-
-
